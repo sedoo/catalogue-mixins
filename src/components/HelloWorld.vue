@@ -2,6 +2,8 @@
   <div class="hello">
     <pre>theme: {{ theme }}</pre>
     <pre>applyTheme: {{ applyTheme }}</pre>
+    <p>Primary color</p>
+    <em>Secondary color</em>
   </div>
 </template>
 
@@ -16,18 +18,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+p {
+  color: var(--primaryColor, blue);
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+
+em {
+  color: var(--secondaryColor, red);
 }
 </style>

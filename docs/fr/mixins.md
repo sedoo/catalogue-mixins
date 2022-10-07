@@ -1,5 +1,13 @@
 # Mixins
 
+## Utiliser
+
+Appliquer le style à l'élément parent du module ou de l'app :
+
+```vue
+<div id="app" :style="applyTheme">` 
+```
+
 ## Généralités
 
 Il n'est pas nécessaire de redéclarer une props / fonction / computed / etc. qui est déjà présente dans une mixin.

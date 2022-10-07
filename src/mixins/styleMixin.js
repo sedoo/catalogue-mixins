@@ -13,6 +13,6 @@ export default {
   computed: {
     applyTheme() {
       return applyPrimaryAndSecondaryColors(this.theme);
-    }
+    },
   },
 };
