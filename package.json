@@ -1,30 +1,44 @@
 {
   "name": "@sedoo/catalogue-mixins",
   "version": "0.0.1",
+  "private": false,
   "description": "Mixins and utils to be used in the catalogue projects",
   "author": "SEDOO",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib --name catalogue-mixins src/plugin.js",
     "lint": "vue-cli-service lint",
     "docs:build": "vuepress build docs",
     "docs:dev": "vuepress dev docs"
   },
-  "dependencies": {
-    "core-js": "^3.8.3",
-    "vue": "^2.6.14"
+  "comments": {
+    "scripts": "The npm run build is used by github for publishing. It musn't be removed"
   },
+  "files": [
+    "dist",
+    "src/**/*"
+  ],
   "devDependencies": {
-    "@babel/core": "^7.12.16",
-    "@babel/eslint-parser": "^7.12.16",
-    "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-plugin-eslint": "~5.0.0",
-    "@vue/cli-service": "~5.0.0",
-    "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3",
-    "vue-cli-plugin-vuepress": "~0.1.1",
-    "vue-template-compiler": "^2.6.14",
-    "vuepress": "^0.10.0"
+    "@vue/cli-plugin-babel": "4.5.7",
+    "@vue/cli-plugin-eslint": "4.5.7",
+    "@vue/cli-service": "4.5.7",
+    "@vue/eslint-config-standard": "5.1.2",
+    "axios": "0.21.2",
+    "babel-eslint": "10.1.0",
+    "core-js": "3.6.5",
+    "eslint": "7.10.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-standard": "4.0.0",
+    "eslint-plugin-vue": "7.0.1",
+    "sass": "1.27.0",
+    "sass-loader": "10.0.2",
+    "vue": "2.6.14",
+    "vue-template-compiler": "2.6.14",
+    "vuepress": "1.8.2",
+    "vue-server-renderer": "2.6.14",
+    "webpack-cdn-upload-plugin": "2.0.2"
   },
   "eslintConfig": {
     "root": true,
@@ -36,14 +50,13 @@
       "eslint:recommended"
     ],
     "parserOptions": {
-      "parser": "@babel/eslint-parser"
+      "parser": "babel-eslint"
     },
     "rules": {}
   },
   "browserslist": [
     "> 1%",
-    "last 2 versions",
-    "not dead"
+    "last 2 versions"
   ],
   "license": "ISC"
 }
