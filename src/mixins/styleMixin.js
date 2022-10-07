@@ -1,18 +1,18 @@
-import { applyPrimaryAndSecondaryColors } from '../utils'
+import { applyPrimaryAndSecondaryColors } from "../utils";
 
 export default {
   props: {
     theme: {
       type: Object,
       default: () => ({
-        primaryColor: '#0b6bb3',
-        secondaryColor: '#f39c12'
-      })
-    }
+        primaryColor: "#0b6bb3",
+        secondaryColor: "#f39c12",
+      }),
+    },
   },
   computed: {
-    applyTheme () {
-      return applyPrimaryAndSecondaryColors(this.theme)
+    applyTheme() {
+      return applyPrimaryAndSecondaryColors(this.theme);
     }
-  }
-}
+  },
+};

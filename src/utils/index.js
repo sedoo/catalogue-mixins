@@ -3,47 +3,43 @@
  * @return {any}
  * @param {any}
  */
-export function applyPrimaryAndSecondaryColors (theme) {
-  if (theme) {
-    const style = {}
-    if (theme.primaryColor) {
-      style['--primaryColor'] = theme.primaryColor
-    }
-    if (theme.secondaryColor) {
-      style['--secondaryColor'] = theme.secondaryColor
-    }
-    return style
-  } else {
-    return ''
-  }
+export function applyPrimaryAndSecondaryColors(theme) {
+  return theme
+    ? Object.keys(theme).reduce((a, b) => {
+        a["--" + b] = theme[b];
+        return a;
+      }, {})
+    : "";
 }
 
-export function formatEditedData (metadataName, dataEdited) {
+export function formatEditedData(metadataName, dataEdited) {
   return {
-    [metadataName]: dataEdited
-  }
+    [metadataName]: dataEdited,
+  };
 }
 
 export const capitalize = (word) => {
-  if (typeof word !== 'string') return ''
-  return word.charAt(0).toUpperCase() + word.slice(1)
-}
+  if (typeof word !== "string") return "";
+  return word.charAt(0).toUpperCase() + word.slice(1);
+};
 
-export function constructUrl () {
-  const url = new URL(this.href)
-  url.pathname += `${url.pathname.endsWith('/') ? '' : '/'}${
+export function constructUrl() {
+  const url = new URL(this.href);
+  url.pathname += `${url.pathname.endsWith("/") ? "" : "/"}${
     this.service_name
-  }`
-  return url.href
+  }`;
+  return url.href;
 }
 
 export const keyHasValue = (obj, key) => {
   if (
     (!obj[key] || !obj[key].length || !Object.keys(obj[key]).length) &&
     obj[key] !== 0
-  ) { return false }
-  return true
-}
+  ) {
+    return false;
+  }
+  return true;
+};
 
 /**
  *
@@ -53,22 +49,22 @@ export const keyHasValue = (obj, key) => {
  *
  * Example : downloadFile("https://wp.com/uploads/image.jpg", "image/jpeg", "image.jpg");
  */
-export function downloadFile (dataurl, mimeType, filename) {
-  const fileType = 'data:' + mimeType + ','
-  const link = document.createElement('a')
-  link.href = fileType + dataurl
-  link.download = filename
-  link.click()
+export function downloadFile(dataurl, mimeType, filename) {
+  const fileType = "data:" + mimeType + ",";
+  const link = document.createElement("a");
+  link.href = fileType + dataurl;
+  link.download = filename;
+  link.click();
 }
 
-export function isEmpty (object) {
-  let empty = true
-  const keys = Object.keys(object)
+export function isEmpty(object) {
+  let empty = true;
+  const keys = Object.keys(object);
   if (keys.length > 0) {
     keys.forEach((key) => {
-      const currentObject = object[key]
-      if (key === 'jsonAttributes') {
-        empty = isJsonAttributesEmpty(object)
+      const currentObject = object[key];
+      if (key === "jsonAttributes") {
+        empty = isJsonAttributesEmpty(object);
       } else if (
         currentObject !== null &&
         currentObject === Object(currentObject)
@@ -78,32 +74,32 @@ export function isEmpty (object) {
           (!Array.isArray(currentObject) &&
             Object.keys(currentObject).length > 0)
         ) {
-          empty = empty && isEmpty(currentObject)
+          empty = empty && isEmpty(currentObject);
         } else {
-          empty = empty && true
+          empty = empty && true;
         }
       } else if (currentObject) {
-        empty = empty && false
+        empty = empty && false;
       } else {
-        empty = empty && true
+        empty = empty && true;
       }
-    })
+    });
   } else {
-    empty = object !== null || object !== ''
+    empty = object !== null || object !== "";
   }
-  return empty
+  return empty;
 }
 
-export function isJsonAttributesEmpty (object) {
-  if (!object.jsonAttributes.length) return true
-  return object.jsonAttributes.every((criteria) => !criteria.values.length)
+export function isJsonAttributesEmpty(object) {
+  if (!object.jsonAttributes.length) return true;
+  return object.jsonAttributes.every((criteria) => !criteria.values.length);
 }
 
-export function objSlice (obj, lastExclusive) {
-  var filteredKeys = Object.keys(obj).slice(0, lastExclusive)
-  var newObj = {}
+export function objSlice(obj, lastExclusive) {
+  var filteredKeys = Object.keys(obj).slice(0, lastExclusive);
+  var newObj = {};
   filteredKeys.forEach(function (key) {
-    newObj[key] = obj[key]
-  })
-  return newObj
+    newObj[key] = obj[key];
+  });
+  return newObj;
 }

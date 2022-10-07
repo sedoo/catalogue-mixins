@@ -7,7 +7,9 @@ const CatalogueMixins = {
       Vue.mixin(i18nMixin);
     }
     Vue.mixin(styleMixin);
-    Vue.mixin(visibilityModeMixin);
+    if (this.$store !== undefined) {
+      Vue.mixin(visibilityModeMixin);
+    }
   },
 };
 
