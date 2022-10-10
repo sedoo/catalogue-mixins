@@ -5,7 +5,6 @@
   "description": "Mixins and utils to be used in the catalogue projects",
   "author": "SEDOO",
   "scripts": {
-    "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name catalogue-mixins src/plugin.js",
     "lint": "vue-cli-service lint",
     "docs:build": "vuepress build docs",
