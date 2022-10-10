@@ -1,5 +1,6 @@
 module.exports = {
   serviceWorker: true,
+  base: "/catalogue-mixins/",
   locales: {
     "/": {
       lang: "en-US",
