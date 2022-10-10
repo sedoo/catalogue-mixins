@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div id="app" class="test" :style="applyTheme">
     <pre>theme: {{ theme }}</pre>
     <pre>applyTheme: {{ applyTheme }}</pre>
     <p>Primary color</p>
@@ -9,14 +9,10 @@
 
 <script>
 export default {
-  name: "HelloWorld",
-  props: {
-    msg: String,
-  },
+  name: "test"
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 p {
   color: var(--primaryColor, blue);
