@@ -42,8 +42,3 @@ Hence, to publish an new version, it is important to modify the number in the *p
 
 The publishing of the library is an automated mechanism based on Github workflow system. No other method should be used.
 After each push on the *main* branch, the online documentation is launched.
-
-
-## Demonstration
-
-[Live demonstration](https://sedoo.github.io/catalogue-mixins/)
