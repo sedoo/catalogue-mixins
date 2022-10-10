@@ -20,17 +20,15 @@ module.exports = {
         label: "English",
         nav: [
           { text: 'Mixins', link: '/mixins.html' },
-          { text: 'Utils', link: '/utils.html' }
         ],
-        sidebar: ["mixins", "utils"],
+        sidebar: ["mixins"],
       },
       "/fr/": {
         label: "Français",
         nav: [
           { text: 'Mixins', link: '/fr/mixins.html' },
-          { text: 'Utils', link: '/fr/utils.html' },
         ],
-        sidebar: ["mixins", "utils"],
+        sidebar: ["mixins"],
       },
     },
   },

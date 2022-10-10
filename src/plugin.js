@@ -1,16 +1,19 @@
 import { i18nMixin, styleMixin, visibilityModeMixin } from "./mixins";
 
-const CatalogueMixins = {
-  // eslint-disable-next-line no-unused-vars
-  install(Vue, options) {
-    if (this.$i18n !== undefined) {
-      Vue.mixin(i18nMixin);
-    }
-    Vue.mixin(styleMixin);
-    if (this.$store !== undefined) {
-      Vue.mixin(visibilityModeMixin);
-    }
-  },
-};
+function install(Vue) {
+  if (install.installed) return;
+  install.installed = true;
+  if (this.$i18n !== undefined) {
+    Vue.mixin(i18nMixin);
+  }
+  Vue.mixin(styleMixin);
+  if (this.$store !== undefined) {
+    Vue.mixin(visibilityModeMixin);
+  }
+}
 
-export default CatalogueMixins;
+const plugin = {
+  install
+}
+
+export default plugin;

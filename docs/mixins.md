@@ -1,13 +1,5 @@
 # Mixins
 
-## Get started
-
-Apply to the `app` element or to root element of the parent if it's a module : 
-
-```vue
-<div id="app" :style="applyTheme">` 
-```
-
 ## Introduction
 
 It is not necessary to declare a props / function / computed / etc. if it is already in a mixin that you use.
@@ -54,6 +46,14 @@ Applies the colors of the catalogue to the component.
 
 ```css
 color: var(--primaryColor);
+```
+
+### How to use
+
+Apply to the `app` element or to root element of the parent if it's a module : 
+
+```vue
+<div id="app" :style="applyTheme">` 
 ```
 
 ## visibilityModeMixin

@@ -1,5 +1,3 @@
-import { applyPrimaryAndSecondaryColors } from "../utils";
-
 export default {
   props: {
     theme: {
@@ -12,7 +10,17 @@ export default {
   },
   computed: {
     applyTheme() {
-      return applyPrimaryAndSecondaryColors(this.theme);
+      return this.applyPrimaryAndSecondaryColors(this.theme);
+    },
+  },
+  methods: {
+    applyPrimaryAndSecondaryColors(theme) {
+      return theme
+        ? Object.keys(theme).reduce((a, b) => {
+            a["--" + b] = theme[b];
+            return a;
+          }, {})
+        : "";
     },
   },
 };
