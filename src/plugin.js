@@ -16,6 +16,7 @@ function registerI18nMixin(Vue) {
   } catch (er) {
     i18n = null;
     if (process.env.NODE_ENV === "development") {
+      // eslint-disable-next-line no-console
       console.warn("Vue-i18n is required to use i18nMixin : npm i vue-i18n");
     }
   }
@@ -32,6 +33,7 @@ function registerVisibilityMixin(Vue) {
   } catch (er) {
     visibility = null;
     if (process.env.NODE_ENV === "development") {
+      // eslint-disable-next-line no-console
       console.warn("Vuex is required to use visibilityMixin : npm i vuex");
     }
   }
