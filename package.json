@@ -2,7 +2,7 @@
   "name": "@sedoo/catalogue-mixins",
   "version": "0.0.1",
   "private": false,
-  "description": "Mixins and utils to be used in the catalogue projects",
+  "description": "Mixins to be used in the catalogue projects",
   "author": "SEDOO",
   "scripts": {
     "build": "vue-cli-service build --target lib --name catalogue-mixins src/plugin.js",
@@ -57,5 +57,15 @@
     "> 1%",
     "last 2 versions"
   ],
-  "license": "ISC"
+  "license": "ISC",
+  "main": "./dist/catalogue-mixins.common.js",
+  "module": "./dist/catalogue-mixins.umd.min.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sedoo/catalogue-mixins.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sedoo/catalogue-mixins/issues"
+  },
+  "homepage": "https://github.com/sedoo/catalogue-mixins#readme"
 }
