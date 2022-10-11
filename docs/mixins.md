@@ -1,20 +1,21 @@
 # Mixins
 
-## Introduction
+## How to use
 
-It is not necessary to declare a props / function / computed / etc. if it is already in a mixin that you use.
+**Install dependency**
 
-The main goal being that if we decide to handle colors differently, we'll only need to modify the mixin.
+```bash
+npm i @sedoo/catalogue-mixins
+```
 
-<br/>
+In **main.js**
 
-**<Badge text="important" type="warning"/>**
+```javascript
+import CatalogueMixins from "@sedoo/catalogue-mixins";
+Vue.use(CatalogueMixins);
+```
 
-**TL;DR**
-
-- All the components that need the language of the catalogue must use `i18nMixin`.
-- All the components that need the colors of the catalogue must use `styleMixin`.
-- All the components that need to handle their visibility depending on the edition/consultation mode must use `visibilityModeMixin`.
+<Badge text="Warning" type="warn" /> The mixins will be available globally for all the components of the project. This means you won't need to redeclare props, computed properties, and functions listed below.
 
 ## i18nMixin
 
@@ -50,17 +51,18 @@ color: var(--primaryColor);
 
 ### How to use
 
-Apply to the `app` element or to root element of the parent if it's a module : 
+Apply to the `app` element or to root element of the parent if it's a module :
 
 ```vue
-<div id="app" :style="applyTheme">` 
+<div id="app" :style="applyTheme">`
 ```
+[See example here](/test.html)
 
 ## visibilityModeMixin
 
 Handles the component's visibility depending on the mode (edition or consultation).
 
-If nothing is specified on the [metadata template](https://services.sedoo.fr/metadatatemplate/swagger-ui.html), the component is either always visible or its visibility is handled directly within the component.
+If nothing is specified on the [metadata template](https://api.sedoo.fr/aeris-metadata-template-rest/swagger-ui/index.html), the component is either always visible or its visibility is handled directly within the component.
 
 Cf. example below :
 
@@ -97,17 +99,3 @@ Cf. example below :
 | editing                | Boolean | `this.$store.getters.getIsUserEditingSheet` | Retrieved from the catalogue store. `true` if the user is in edition mode ; `false` if the user is in consultation mode. |
 | onlyEditionMode        | Boolean | `false`                                     | `true` if the prop `visibleOnlyOn: "edition"` is specified in the template and if `editing` is `true`                    |
 | onlyOnConsultationMode | Boolean | `false`                                     | `true` if the prop `visibleOnlyOn: "consultation"` is specified in the template and if `editing` is `false`              |
-
-## index.js
-
-Allows to import all mixins at once : 
-
-```js
-import { i18nMixin, styleMixin, visibilityMixin } from "../../../mixins";
-```
-
-**<Badge text="Shortcut in Codium" type="success"/>**
-
-Start typing `mixins: []`, then the name of the mixin to import. And hit "Enter".
-
-The line `import {...} from ...` adds itself at the top.

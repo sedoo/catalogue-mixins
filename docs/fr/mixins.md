@@ -1,20 +1,21 @@
 # Mixins
 
-## Généralités
+## Démarrage rapide
 
-Il n'est pas nécessaire de redéclarer une props / fonction / computed / etc. qui est déjà présente dans une mixin.
+**Installer la dépendance**
 
-Le but étant que si un jour on change de façon de gérer la couleur ou une valeur par défaut, on n'aura qu'à la changer dans la mixin.
+```bash
+npm i @sedoo/catalogue-mixins
+```
 
-<br/>
+Dans **main.js**
 
-**<Badge text="important" type="warning"/>**
+```javascript
+import CatalogueMixins from "@sedoo/catalogue-mixins";
+Vue.use(CatalogueMixins);
+```
 
-**En résumé**
-
-- Tous les composants qui ont besoin de la langue du catalogue doivent utiliser `i18nMixin`.
-- Tous les composants qui ont besoin de la couleur du catalogue doivent utiliser `styleMixin`.
-- Tous les composants qui ont besoin de gérer leur visibilité en fonction du mode edition/consultation doivent utiliser `visibilityModeMixin`.
+<Badge text="Attention" type="warn" /> Les mixins seront disponibles dans tous les composants du projet. Cela signifie que vous n'aurez pas à redéclarer les props, proriétés computed et fonctions documentées ci-dessous.
 
 ## i18nMixin
 
@@ -48,13 +49,14 @@ Permet d'appliquer les couleurs du catalogue au composant.
 color: var(--primaryColor);
 ```
 
-### utilisation
+### Utilisation
 
 Appliquer le style à l'élément parent du module ou de l'app :
 
 ```vue
 <div id="app" :style="applyTheme">` 
 ```
+[Voir l'exemple ici](/fr/test.html)
 
 ## visibilityModeMixin
 
@@ -97,17 +99,3 @@ Ci-dessous, on dit que :
 | editing                | Boolean | `this.$store.getters.getIsUserEditingSheet` | Récupéré depuis le store du catalogue. Vaut `true` si on est en édition et `false` si on est en consultation.    |
 | onlyEditionMode        | Boolean | `false`                                     | `true` si la propriété `visibleOnlyOn: "edition"` est présente dans le template et si `editing` est `true`       |
 | onlyOnConsultationMode | Boolean | `false`                                     | `true` si la propriété `visibleOnlyOn: "consultation"` est présente dans le template et si `editing` est `false` |
-
-## index.js
-
-Permet d'importer toutes les mixins en une seule ligne :
-
-```js
-import { i18nMixin, styleMixin, visibilityMixin } from "../../../mixins";
-```
-
-**<Badge text="Raccourci dans Codium" type="success"/>**
-
-Commencer à taper `mixins: []` puis le nom de la mixin à importer. Et sélectionner avec "Entrée".
-
-La ligne `import {...} from ...` s'ajoute automatiquement.

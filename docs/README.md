@@ -26,7 +26,7 @@ Vue.use(CatalogueMixins);
 <Content slot-key="footer"/>
 
 :::slot footer
-@sedoo/catalogue-mixins v0.0.1
+[@sedoo/catalogue-mixins](https://www.npmjs.com/package/@sedoo/catalogue-mixins)
 
 Sedoo | 2022
 :::

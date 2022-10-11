@@ -14,22 +14,23 @@ module.exports = {
     },
   },
   themeConfig: {
+    repo: "sedoo/catalogue-mixins",
     logo: "https://www4.obs-mip.fr/wp-content-omp/uploads/sites/21/2017/07/sedoo-full.png",
     displayAllHeaders: true,
     locales: {
       "/": {
         label: "English",
         nav: [
-          { text: 'Mixins', link: '/mixins.html' },
-          { text: 'Test', link: '/test.html' },
+          { text: "Mixins", link: "/mixins.html" },
+          { text: "Test", link: "/test.html" },
         ],
         sidebar: ["mixins", "test"],
       },
       "/fr/": {
         label: "Français",
         nav: [
-          { text: 'Mixins', link: '/fr/mixins.html' },
-          { text: 'Test', link: '/fr/test.html' },
+          { text: "Mixins", link: "/fr/mixins.html" },
+          { text: "Test", link: "/fr/test.html" },
         ],
         sidebar: ["/fr/mixins", "/fr/test"],
       },
