@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.0.7](https://github.com/sedoo/catalogue-mixins/tree/v0.0.7) (2022-10-11)
+
+[Full Changelog](https://github.com/sedoo/catalogue-mixins/compare/v0.0.6...v0.0.7)
+
+## [v0.0.6](https://github.com/sedoo/catalogue-mixins/tree/v0.0.6) (2022-10-11)
+
+[Full Changelog](https://github.com/sedoo/catalogue-mixins/compare/0.0.5...v0.0.6)
+
 ## [0.0.5](https://github.com/sedoo/catalogue-mixins/tree/0.0.5) (2022-10-11)
 
 [Full Changelog](https://github.com/sedoo/catalogue-mixins/compare/97ce4ddc7986daa4e021604ca69f729c70da5204...0.0.5)
