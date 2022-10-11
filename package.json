@@ -1,6 +1,6 @@
 {
   "name": "@sedoo/catalogue-mixins",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "private": false,
   "description": "Mixins to be used in the catalogue projects",
   "author": "SEDOO",
